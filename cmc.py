@@ -1,12 +1,9 @@
-from coinmarketcap import Market
+import coinmarketcap
 import json
-import requests
+import pandas as pd
+import time
 
-url = "https://api.coinmarketcap.com/v1/ticker/bitcoin"
+market = coinmarketcap.Market()
+coin = market.ticker('ethereum')
+print (json.dumps(coin))
 
-myResponse = requests.get(url)
-print (myResponse)
-
-data = myResponse.json()
-
-print (data)
